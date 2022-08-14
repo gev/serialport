@@ -4,7 +4,6 @@
 module System.Hardware.Serialport.Types where
 
 import           Data.Word
-import           System.Posix.Terminal (BaudRate (..))
 
 -- | Supported baudrates
 data CommSpeed
@@ -39,40 +38,6 @@ data CommSpeed
   | CS3500000
   | CS4000000
   deriving (Show, Read, Eq, Bounded)
-
-commSpeedToBaudRate :: CommSpeed -> BaudRate
-commSpeedToBaudRate = \case
-  CS50      -> B50
-  CS75      -> B75
-  CS110     -> B110
-  CS134     -> B134
-  CS150     -> B150
-  CS200     -> B200
-  CS300     -> B300
-  CS600     -> B600
-  CS1200    -> B1200
-  CS1800    -> B1800
-  CS2400    -> B2400
-  CS4800    -> B4800
-  CS9600    -> B9600
-  CS19200   -> B19200
-  CS38400   -> B38400
-  CS57600   -> B57600
-  CS115200  -> B115200
-  CS230400  -> B230400
-  CS460800  -> B460800
-  CS500000  -> B500000
-  CS576000  -> B576000
-  CS921600  -> B921600
-  CS1000000 -> B1000000
-  CS1152000 -> B1152000
-  CS1500000 -> B1500000
-  CS2000000 -> B2000000
-  CS2500000 -> B2500000
-  CS3000000 -> B3000000
-  CS3500000 -> B3500000
-  CS4000000 -> B4000000
-
 
 data StopBits = One | Two
   deriving (Show, Read, Eq, Bounded)
